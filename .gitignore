@@ -1,0 +1,12 @@
+/target/
+*.project
+.settings
+*.classpath
+*.class
+target
+logs
+webapp
+*.factorypath
+.springBeans
+.idea
+*.iml
