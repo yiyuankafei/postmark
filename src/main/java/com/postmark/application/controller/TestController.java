@@ -8,7 +8,7 @@ public class TestController {
 	
 	@RequestMapping("/test")
 	public String test() {
-		return "postmark-test";
+		return "postmark-test-jenkins";
 	}
 
 }
