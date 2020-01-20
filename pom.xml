@@ -4,11 +4,14 @@
   <artifactId>postmark</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <packaging>war</packaging>
+  
   <parent>
   	<groupId>org.springframework.boot</groupId>
   	<artifactId>spring-boot-starter-parent</artifactId>
   	<version>2.1.7.RELEASE</version>
   </parent>
+  
   
   <dependencies>
 	<dependency>
