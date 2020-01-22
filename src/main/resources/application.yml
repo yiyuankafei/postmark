@@ -1,0 +1,19 @@
+spring:
+    applicaiton:
+        name: postmark
+    thymeleaf: # 禁用thymeleaf緩存
+        cache: false
+    servlet: 
+        multipart: 
+            max-file-size: 20MB 
+            max-request-size: 50MB
+
+server:
+    port: 9092
+
+oss:
+  accessKeyId: LTAIXVFZBZEYUAz4
+  endPoint: http://oss-cn-hangzhou.aliyuncs.com
+  bucketName: byf-bucket
+  accessKeySecret: xd1FQfRMpcnkN2A0DZ8IM41AAyjdpQC
+
