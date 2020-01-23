@@ -10,6 +10,33 @@ public class PostMarkUtil {
 	
 	public static void drawPostMark(Graphics2D graphics, int width, String time, char[] charArray) throws Exception {
 		
+		//邮戳位置，直径
+		double unit = ((double)width) / 3 / 1000;
+		int padding = (int)(100 * unit);
+		int diam = (int)(800 * unit);
+		
+		
+		graphics.setColor(Color.BLACK);
+		graphics.setStroke(new BasicStroke(width / 1000 * 2));
+		// RenderingHints.VALUE_ANTIALIAS_ON 抗锯齿
+		graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		graphics.drawOval(padding, padding, diam, diam);
+		graphics.setFont(new Font("黑体",Font.BOLD,(int)(90*unit)));
+		graphics.drawString(time,(int)(250*unit),(int)(550*unit));
+		
+		graphics.setFont(new Font("宋体",Font.BOLD,(int)(100*unit)));
+		graphics.translate((int)(300*unit), (int)(770*unit));
+		graphics.rotate(40* Math.PI / 180);
+		graphics.drawString("逐",0,0);
+		graphics.rotate(-40* Math.PI / 180);
+		graphics.translate(-(int)(300*unit), -(int)(770*unit));
+		
+		graphics.translate((int)(630*unit), (int)(850*unit));
+		graphics.rotate(-40* Math.PI / 180);
+		graphics.drawString("路",0,0);
+		graphics.rotate(40* Math.PI / 180);
+		graphics.translate(-(int)(630*unit), -(int)(850*unit));
+		
 		switch(charArray.length) {
 		case 2:
 			drawPostMark2(graphics,width,time,charArray);
@@ -32,38 +59,17 @@ public class PostMarkUtil {
 private static void drawPostMark2(Graphics2D graphics, int width, String time, char[] charArray) throws Exception{
 	
 	
-		double percent = ((double)width)/3/1000;
-		graphics.setColor(Color.BLACK);
-		graphics.setStroke(new BasicStroke(width / 1000 * 2));
-		graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
-		graphics.drawOval((int)(100*percent), (int)(100*percent), (int)(800*percent), (int)(800*percent));
-		graphics.setFont(new Font("黑体",Font.BOLD,(int)(90*percent)));
-		graphics.drawString(time,(int)(250*percent),(int)(550*percent));
+		double unit = ((double)width)/3/1000;
 		
-		graphics.setFont(new Font("宋体",Font.BOLD,(int)(100*percent)));
-		graphics.translate((int)(300*percent), (int)(770*percent));
-		graphics.rotate(40* Math.PI / 180);
-		graphics.drawString("逐",0,0);
-		graphics.rotate(-40* Math.PI / 180);
-		graphics.translate(-(int)(300*percent), -(int)(770*percent));
+		graphics.setFont(new Font("宋体",Font.BOLD,(int)(130*unit)));
 		
-		graphics.translate((int)(630*percent), (int)(850*percent));
-		graphics.rotate(-40* Math.PI / 180);
-		graphics.drawString("路",0,0);
-		graphics.rotate(40* Math.PI / 180);
-		graphics.translate(-(int)(630*percent), -(int)(850*percent));
-		
-		
-		
-		graphics.setFont(new Font("宋体",Font.BOLD,(int)(130*percent)));
-		
-		graphics.translate((int)(300*percent), (int)(350*percent));
+		graphics.translate((int)(300*unit), (int)(350*unit));
 		graphics.rotate(-40* Math.PI / 180);
 		graphics.drawString(((Character)charArray[0]).toString(),0,0);
 		graphics.rotate(40* Math.PI / 180);
-		graphics.translate(-(int)(300*percent),-(int)(350*percent));
+		graphics.translate(-(int)(300*unit),-(int)(350*unit));
 		
-		graphics.translate((int)(630*percent), (int)(280*percent));
+		graphics.translate((int)(630*unit), (int)(280*unit));
 		graphics.rotate(40* Math.PI / 180);
 		graphics.drawString(((Character)charArray[1]).toString(),0,0);
 		

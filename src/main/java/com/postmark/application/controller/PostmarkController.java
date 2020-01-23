@@ -57,7 +57,7 @@ public class PostmarkController {
 		int width = bufferedImage.getWidth();
 		int height = bufferedImage.getHeight();
 		
-		BufferedImage newImage = new BufferedImage(width, height, 4);
+		BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_BGR);
 		Graphics2D graphics = newImage.createGraphics();
 		graphics.drawImage(bufferedImage, 0, 0, width, height, null);
 		PostMarkUtil.drawPostMark(graphics, width, time, location.toCharArray());
